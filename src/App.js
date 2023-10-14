@@ -3,7 +3,7 @@ import './App.css';
 import React from 'react'
 
 
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import About from './Pages/About';
 import ArticlePage from './Pages/ArticlePage'
 import ArticleList from './Pages/ArticleList'
@@ -13,7 +13,7 @@ import NotFoundPage from './Pages/NotFoundPage';
 
 function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <div className="App">
                 <NavBar />
                 <div id='app-body'>
@@ -26,7 +26,7 @@ function App() {
                     </Routes>
                 </div>
             </div>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 export default App;
