@@ -14,4 +14,12 @@ brew upgrade openssl
 gcollazo-mongodb
 
 
+4. connecting the front end and back end
+npm install axios
+
+5. use backend
+npm run dev
+add this info to json:
+    "Proxy":"http://localhost:8000/"
+
 
