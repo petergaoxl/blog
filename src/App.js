@@ -11,7 +11,8 @@ import ArticleList from './Pages/ArticleList'
 import HomePage from './Pages/HomePage';
 import NavBar from './NavBar';
 import NotFoundPage from './Pages/NotFoundPage';
-
+import LoginPage from './Pages/LoginPage';
+import CreateAccountPage from './Pages/CreateAccountPage';
 function App() {
     return (
         <BrowserRouter>
@@ -23,6 +24,8 @@ function App() {
                         <Route path='/about' element={<About />} />
                         <Route path='/articles' element={<ArticleList />} />
                         <Route path='/articles/:articleId' element={<ArticlePage />} />
+                        <Route path='/login' element={<LoginPage />} />
+                        <Route path='createaccount' element={<CreateAccountPage />} />
                         <Route path='*' element={<NotFoundPage />} />
                     </Routes>
                 </div>

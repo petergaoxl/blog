@@ -4,13 +4,14 @@ body {
   }
   
   button {
-    padding: 16px;
+    padding: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
-    background-color: black;
+    background-color: #44AF69;
     color: white;
     border-radius: 8px;
     cursor: pointer;
+    border:0px;
   }
   
   h3, h4 {
