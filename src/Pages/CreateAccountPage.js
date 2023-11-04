@@ -39,6 +39,7 @@ const CreateAccountPage = () => {
                 onChange={e => setPassword(e.target.value)} />
             <input
                 type="password"
+                placeholder='Re-enter your password here'
                 value={confirmPassword}
                 onChange={e => setConfirmPassword(e.target.value)} />
             <button onClick={createAccount}>Create Account</button>

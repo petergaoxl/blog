@@ -7,12 +7,19 @@ import axios from 'axios';
 import CommentsList from '../components/CommentsList';
 import AddCommentForm from '../components/AddCommentForm';
 import useUser from '../hooks/useUser';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const ArticlePage = () => {
     // 1.1 Retrieve the articleId from the route parameters.
     const params = useParams();
     const articleId = params.articleId;
     const article = articles.find(article => article.name === articleId);
+
+// use navigate to the login page
+    const navigate = useNavigate();
+
 
     // 5.5 Retrieve user information (possibly for authentication).
     const { user } = useUser();
@@ -58,7 +65,9 @@ const ArticlePage = () => {
                 {user
                     // ? <button onClick={addUpvote}>Favour it</button>
                     ?  <button onClick={addUpvote}>{canUpvote ? 'Favour it' : 'Voted!'}</button>
-                    : <button>Log in to upvote</button>
+                    : <button onClick={()=>{
+                        navigate('/login')
+                    }}>Log in to upvote</button>
                 }
                 <p>This article has <strong style={{ color: 'green' }}>{articleInfo.upvotes}</strong> Upvote(s)</p>
             </div>
@@ -67,7 +76,9 @@ const ArticlePage = () => {
             {user ? <AddCommentForm
                 articleName={articleId}
                 onArticleUpdated={updatedArticle => setArticleInfo(updatedArticle)}
-            /> : <button>Log in to add comment</button>}
+            /> : <button onClick={()=>{
+                navigate('/login')
+            }}>Log in to add comment</button>}
             <CommentsList comments={articleInfo.comments} />
         </div>
     );
